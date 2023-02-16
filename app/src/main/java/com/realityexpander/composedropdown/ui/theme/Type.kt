@@ -1,4 +1,4 @@
-package com.plcoding.composedropdown.ui.theme
+package com.realityexpander.composedropdown.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
