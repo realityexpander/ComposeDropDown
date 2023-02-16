@@ -68,13 +68,13 @@ fun DropDown(
     val alpha = animateFloatAsState(
         targetValue = if(isOpen) 1f else 0f,
         animationSpec = tween(
-            durationMillis = 300
+            durationMillis = 800
         )
     )
     val rotateX = animateFloatAsState(
-        targetValue = if(isOpen) 0f else -90f,
+        targetValue = if(isOpen) 0f else -180f,
         animationSpec = tween(
-            durationMillis = 300
+            durationMillis = 1000
         )
     )
     Column(
@@ -109,10 +109,12 @@ fun DropDown(
             modifier = Modifier
                 .fillMaxWidth()
                 .graphicsLayer {
-                    transformOrigin = TransformOrigin(0.5f, 0f)
-                    rotationX = rotateX.value
+//                    transformOrigin = TransformOrigin(0.5f, 0f)
+                    transformOrigin = TransformOrigin(1.0f - alpha.value, 0f)
+//                    rotationX = rotateX.value
+                    rotationZ = rotateX.value
                 }
-                .alpha(alpha.value)
+                //.alpha(alpha.value)
         ) {
             content()
         }
